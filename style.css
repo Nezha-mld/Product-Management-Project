@@ -374,9 +374,19 @@ body.light #scrollTopBtn:hover {
     font-size: 16px;
   }
 }
-table {
-  display: block;
-  overflow-x: auto;
-  white-space: nowrap;
+/* Table responsive uniquement pour tablette et mobile */
+@media screen and (max-width: 1024px) {
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
 }
+
+/* Largeur minimale pour les colonnes afin qu’elles ne soient pas trop étroites */
+table th, table td {
+  min-width: 100px;
+}
+
+
 
