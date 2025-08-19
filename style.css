@@ -81,6 +81,7 @@ table{
     width: 100%;
     text-align: center;
     margin: 10px 0;
+    table-layout: fixed; /* ✅ Les colonnes s’alignent bien avec les <th> */
 }
 table th{
     text-transform: uppercase;
@@ -219,13 +220,6 @@ footer::before {
   to { transform: translateX(50px); }
 }
 */
-
-
-
-
-
-
-
 
 
 footer {
@@ -387,6 +381,28 @@ body.light #scrollTopBtn:hover {
 table th, table td {
   min-width: 100px;
 }
+
+
+
+/* Centrer le texte et gérer le débordement */
+table th, table td {
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Colonnes Update et Delete avec largeur fixe */
+table th:nth-child(9), /* Update */
+table td:nth-child(9),
+table th:nth-child(10), /* Delete */
+table td:nth-child(10) {
+  width: 80px; /* tu peux ajuster à 70px ou 90px si besoin */
+}
+
+
+
+
+
 
 
 
