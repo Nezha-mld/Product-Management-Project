@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neez MLD</title>
+    <link rel="stylesheet" href="style.css">     
+</head>
+<body>
+  <div class="theme-toggle">
+  <button id="toggleTheme">🌙 Dark / ☀️ Light</button>
+</div>
+
+  <div class="crud">
+       <div class="head">
+            <h2>Product Management</h2>
+            <p>Manage   your products easily</p>
+       </div>
+       <div class="inputs">  
+          <input type="text" placeholder="title" id="title">
+          <div class="price">
+            <input onkeyup="getToal()" type="number" id="price"  placeholder="price">
+            <input onkeyup="getToal()"  type="number" id="taxes"  placeholder="taxes">
+            <input onkeyup="getToal()" type="number" id="ads"  placeholder="ads">
+            <input onkeyup="getToal()" type="number" id="discount"  placeholder="discount">
+           <small id="total">0</small>
+          </div>
+          <input type="number" placeholder="count" id="count">
+          <input type="number" placeholder="category" id="category">
+          <button id="submit">create</button>
+              </div>
+             <div class="outputs">
+              <div class="searchblock">
+                <input onkeyup="searchdata(this.value)" type="text" id="search"  placeholder="search">
+                <div class="btnsearch">
+                  <button onclick="getsearchmood(this.id)" id="searchtitle">search by title</button>
+                  <button onclick="getsearchmood(this.id)" id="searchcategory">search by category</button>
+                </div>
+                
+              </div>
+             </div>
+             <div id="deleteAll">
+
+             </div>
+             <table>
+              <tr> 
+                <th>id</th>
+                <th>title</th>
+                <th>price</th>
+                <th>taxes</th>
+                <th>ads</th>
+                <th>discount</th>
+                <th>category</th>
+                <th>update</th>
+                <th>delete</th>
+              </tr>
+              <tbody id="tbody">
+                
+                  
+              </tbody>
+             </table>
+  </div>   
+  <button id="scrollTopBtn" title="Go to top">⬆️</button>
+
+                <footer>
+  <p>© 2025 Mon Projet management | Made with ❤️ by Nezha</p>
+</footer>
+
+   
+  <script src="main.js"></script>
+</body>
+</html>

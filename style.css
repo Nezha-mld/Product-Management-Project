@@ -1,0 +1,326 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+body{
+    background: #222;
+    color: #fff;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    
+}
+.crud{
+    width: 80%;
+    margin: auto;
+}
+.head{
+    text-align: center;
+    text-transform: uppercase;
+    margin: 10px   0;
+}
+input{
+    width: 100%;
+    height: 30px;
+    outline: none;
+    border: none;
+    background: #111;
+    margin: 4px 0;
+    border-radius: 4px;
+    padding: 4px;
+    color:#fff;
+}
+input:focus{
+    background: #000;
+    transform: scale(1.1);
+}
+.price input{
+    width: 20%;
+}
+#total{
+    background: #e9e8e7;
+    padding:5px 2px;
+    border-radius: 4px;
+}
+#total::before{
+    content:'Total: ';
+}
+button{
+    width: 100%;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+    background: #614b22;
+    color:#fff;
+    border-radius: 20px;
+    transition: 0.5s;
+}
+button:hover{
+    background: #312001;
+    letter-spacing: 1px;
+    transform: scale(1.1);
+}
+.btnsearch{
+    display:flex;
+    justify-content: space-between;
+
+}
+.btnsearch button{
+    width: 45%;
+}
+#deleteAll{
+    margin: 20px  0;
+}
+table{
+    width: 100%;
+    text-align: center;
+    margin: 10px 0;
+}
+table th{
+    text-transform: uppercase;
+}
+th,td{
+    padding: 5px;
+}
+
+
+
+
+.head h2{
+    text-align:center;
+    color:#b58f57;
+    margin-bottom:5px;
+}
+
+.head p{
+    text-align:center;
+    color:#0f0f0f;
+    margin-bottom:30px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
+}
+
+
+.theme-toggle{
+    text-align: right;
+    margin: 15px;
+}
+.theme-toggle button{
+    width: auto;
+    padding: 5px 15px;
+    border-radius: 10px;
+    background: #444;
+    color: #fff;
+    transition: 0.3s;
+}
+.theme-toggle button:hover{
+    background: #222;
+}
+.light-mode{
+    background: #f2f2f2;
+    color: #222;
+}
+.light-mode input{
+    background: #fff;
+    color: #6b0755;
+}
+.light-mode button{
+    background: #390549;
+    color: #fff;
+}
+.light-mode button:hover{
+    background: #daa5e7;
+}
+.light-mode #total{
+    background: #a598a8;
+}
+
+
+
+
+/*for table*/
+table tr:hover {
+  background: #cec1c1;
+  transform: scale(1.01);
+  transition: 0.2s;
+}
+
+
+
+
+button {
+  background: linear-gradient(45deg, #b58f57, #614b22);
+  transition: 0.3s;
+}
+button:hover {
+  background: linear-gradient(45deg, #614b22, #b58f57);
+  transform: scale(1.05);
+}
+
+
+
+
+
+
+input:focus {
+  border: 1px solid #cfc9c3;
+  box-shadow: 0 0 8px #cfc9c3;
+  transform: scale(1.05);
+}
+
+
+/*باش العناوين ديال الأعمدة يبقاو ظاهرين ملي نطيحو فالـ scroll:*/
+table th {
+  position: sticky;
+  top: 0;
+  background: #b8afaf;
+  z-index: 2;
+}
+
+
+/*  الـ <h2> ولا <p> فالـ header يقدرو يكونو animated gradient text:      */
+.head h2 {
+  background: linear-gradient(90deg, #5a4f57, #fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 3s linear infinite;
+}
+@keyframes shine {
+  from { background-position: 0%; }
+  to { background-position: 200%; }
+}
+
+
+
+
+/*footer {
+  height: 80px;
+  background: linear-gradient(45deg, #222, #614b22);
+  position: relative;
+  overflow: hidden;
+}
+footer::before {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 100%;
+  top: -50%;
+  left: -50%;
+  background: radial-gradient(circle, #b58f57 20%, transparent 20%) repeat;
+  background-size: 50px 50px;
+  animation: wave 4s linear infinite;
+}
+@keyframes wave {
+  to { transform: translateX(50px); }
+}
+*/
+
+
+
+
+
+
+
+
+
+footer {
+  margin-top: 40px;
+  padding: 20px 0;
+  text-align: center;
+  background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+  color: #e0c087;
+  font-size: 15px;
+  border-top: 1px solid #444;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: footerFadeIn 1.5s ease-out forwards;
+}
+
+footer p {
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+footer a {
+  color: #cfa96c;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+footer a:hover {
+  color: #fff;
+  text-shadow: 0 0 8px #cfa96c;
+}
+
+/* Animation*/
+@keyframes footerFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* ✅ Light mode footer */
+body.light footer {
+  background: linear-gradient(135deg, #f1f1f1, #ffffff);
+  color:#706868;
+  border-top: 1px solid #ddd;
+}
+
+body.light footer a {
+  color: #706868;
+}
+
+body.light footer a:hover {
+  color: #706868;
+  text-shadow: 0 0 6px #706868;
+}
+
+
+
+.crud {
+  background: #706868;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px #6d6767;
+}
+
+
+
+button {
+  animation: float 3s ease-in-out infinite;
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+#scrollTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 100;
+  background: #614b22;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+  opacity: 0;
+  pointer-events: none;
+}
+/*pour scrol top*/
+#scrollTopBtn:hover {
+  background: #dbd7d1;
+  transform: scale(0.1);
+}
+
+/* Light mode */
+body.light #scrollTopBtn {
+  background: #40044d;
+  color: #fff;
+}
+body.light #scrollTopBtn:hover {
+  background: #c9c4b2;
+}
